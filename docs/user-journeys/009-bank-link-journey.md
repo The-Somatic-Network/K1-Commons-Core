@@ -7,16 +7,15 @@ A user who needs to connect their bank account to enable payouts and payments.
 Link a bank account through a third-party provider (e.g., Stripe, Wise) so they can receive payouts and make payments.
 
 ## Steps
-1. Navigates to account settings → payment methods.
-2. Selects a payment provider (Stripe, Wise, direct bank).
-3. Authenticates through the provider's onboarding flow (identity verification, bank account linkage).
-4. Confirms the linked account is active and ready for transactions.
-5. Tests with a small payout to verify the connection works.
+1. Navigates to account settings → authentication methods.
+2. Sets up account abstraction — Google login or Passkey (no seed phrases needed).
+3. Connects Stripe as the credit-card-to-crypto on-ramp so non-crypto users experience a normal checkout flow.
+4. Confirms the account is ready for transactions (fiat on-ramp → auto-converted to USDC/EURC).
 
 ## Pain Points
-- Identity verification friction — providers require extensive KYC documentation.
-- Provider limitations — some regions aren't supported by certain payment gateways.
-- Linking errors — account details don't match provider records.
+- Google login may raise privacy concerns.
+- Passkey setup requires a compatible device/browser.
+- Stripe on-ramp fees reduce effective payout amount.
 
 ## Success Criteria
-The user successfully links their bank account and completes a test payout.
+The user completes setup via account abstraction (Google/Passkey) and can fund their wallet through Stripe's credit-card on-ramp.

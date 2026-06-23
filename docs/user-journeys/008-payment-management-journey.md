@@ -7,16 +7,15 @@ A user (buyer or provider) who needs to manage incoming/outgoing payments throug
 View balance, initiate a payout to their linked bank account or wallet.
 
 ## Steps
-1. Navigates to their wallet/dashboard.
-2. Reviews available balance (fiat_balance + time_credit_balance).
-3. Initiates a payout request for the desired amount.
-4. The platform processes the transfer via the payment provider (e.g., Stripe, Wise, or direct bank).
-5. User confirms the payout is reflected in their bank account.
+1. Navigates to their wallet/dashboard to review escrowed funds held in the Smart Contract Safe multisig.
+2. Reviews milestone status — funds are held in USDC/EURC until each milestone is signed off.
+3. Initiates a payout request; the smart contract automatically splits 95% to the provider and 5% to the solidarity fund.
+4. Funds settle on-chain; user sees updated balance in their crypto wallet.
 
 ## Pain Points
-- Payout delays — bank transfers can take days to clear.
-- Insufficient balance — user tries to withdraw more than available.
-- Provider fees — payment gateways take a cut on top of the platform fee.
+- Gas fees for on-chain transactions.
+- Non-crypto users may find crypto balances confusing.
+- Stablecoin depeg risk (USDC/EURC stability).
 
 ## Success Criteria
-The user initiates a payout and receives funds in their bank account within the expected timeframe.
+The user initiates a payout, the smart contract executes the 95/5 split, and funds are settled on-chain.
